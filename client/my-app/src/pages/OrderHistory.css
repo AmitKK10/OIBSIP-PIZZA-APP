@@ -1,0 +1,19 @@
+/* src/styles/OrderHistory.css */
+.order-history-page {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.order-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  background-color: #fafafa;
+}

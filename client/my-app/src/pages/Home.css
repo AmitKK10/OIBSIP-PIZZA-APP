@@ -1,0 +1,404 @@
+/* --- Google Font & Theme Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #ff4d00;
+  --primary-hover-color: #e64500;
+  --accent-color: #ffd700;
+  --bg-dark: #0d0d0d;
+  --bg-card: rgba(30, 30, 30, 0.9);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --text-light: #f5f5f5;
+  --text-secondary: #bbbbbb;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --veg-color: #4caf50;
+  --non-veg-color: #f44336;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --border-radius: 16px;
+  --transition-speed: 0.3s;
+}
+
+/* --- Base & Container Styles --- */
+body {
+  background-color: var(--bg-dark);
+}
+
+.home-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Header & Filters --- */
+.home-header {
+  margin-bottom: 2.5rem;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, #141313, #d70404d9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.search-bar, .sort-select, .filter-select {
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 1rem;
+  flex-grow: 1;
+  min-width: 180px;
+  transition: all var(--transition-speed) ease;
+}
+
+.search-bar:focus, .sort-select:focus, .filter-select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Price Range */
+.price-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  flex-grow: 1;
+  min-width: 220px;
+}
+
+.price-filter label {
+  white-space: nowrap;
+  -webkit-text-fill-color:linear-gradient(135deg, #141313, #d70404d9) ;
+}
+
+.price-filter input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.price-filter input[type="range"]:hover {
+  opacity: 1;
+}
+
+.price-filter input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.price-filter input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* --- Card Animation --- */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Pizza Grid & Cards --- */
+.pizza-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.pizza-card {
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+}
+
+.pizza-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(255, 102, 0, 0.5);
+}
+
+/* --- Image Hover Zoom --- */
+.pizza-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.pizza-card:hover .pizza-img {
+  transform: scale(1.08);
+}
+
+/* --- Card Indicators & Wishlist --- */
+.veg-indicator {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+  z-index: 2;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.wishlist-icon:hover {
+  transform: scale(1.15);
+  background-color: rgba(255, 215, 0, 0.7);
+}
+
+/* --- Text Content --- */
+.pizza-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1rem 1.5rem 0.25rem;
+  color: var(--text-light);
+}
+
+.pizza-category {
+  font-size: 0.9rem;
+  margin: 0 1.5rem;
+  color: var(--text-secondary);
+}
+
+.pizza-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5rem 1.5rem;
+  color: var(--accent-color);
+}
+
+/* --- Dropdowns --- */
+.size-select {
+  width: calc(100% - 3rem);
+  margin: 0.5rem 1.5rem;
+  padding: 0.75rem;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.size-select:hover {
+  border-color: var(--accent-color);
+}
+
+/* --- Add to Cart Button with Ripple --- */
+.add-to-cart-btn {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  border: none;
+  padding: 1rem;
+  margin: 1rem 1.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.add-to-cart-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.add-to-cart-btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+/* --- No Results --- */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  padding: 4rem 0;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .search-bar, .sort-select, .filter-select, .price-filter {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .pizza-price {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Pizza Grid: allow slightly smaller min widths on smaller screens --- */
+.pizza-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* smaller min width */
+  gap: 1.5rem; /* slightly smaller gap */
+}
+
+/* --- Pizza card tweaks for smaller size and smoother zoom --- */
+.pizza-card {
+  /* Reduce padding or height implicitly by removing min-height, if any */
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+  /* Optional: slightly smaller scale on hover for subtle zoom */
+}
+
+.pizza-card:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 14px 32px rgba(255, 165, 0, 0.5); /* stronger glow */
+}
+
+/* --- Pizza image fills container fully — no max-width constraint, with zoom --- */
+.pizza-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+/* Zoom effect on hover stronger and smoother */
+.pizza-card:hover .pizza-img {
+  transform: scale(1.15);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* --- Responsive tweaks for smaller devices --- */
+@media (max-width: 768px) {
+  .pizza-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* even smaller on tablets */
+  }
+  .pizza-name {
+    font-size: 1.1rem;
+  }
+  .pizza-price {
+    font-size: 1.25rem;
+  }
+  .size-select {
+    font-size: 0.9rem;
+    margin: 0.4rem 1rem;
+  }
+  .add-to-cart-btn {
+    padding: 0.9rem;
+    font-size: 0.9rem;
+    margin: 1rem 1rem 1.2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza-grid {
+    grid-template-columns: 1fr; /* stack on mobile */
+    gap: 1rem;
+  }
+  .pizza-name {
+    font-size: 1rem;
+  }
+  .pizza-price {
+    font-size: 1.1rem;
+  }
+  .size-select {
+    font-size: 0.85rem;
+    margin: 0.3rem 0.75rem;
+  }
+  .add-to-cart-btn {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+    margin: 0.8rem 1rem 1rem 1rem;
+  }
+}

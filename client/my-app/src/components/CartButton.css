@@ -1,0 +1,30 @@
+.cart-button {
+  background-color: #fff;
+  color: #ff6f00;
+  font-size: 18px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-button:hover {
+  background-color: #ffe0b2;
+  transform: translateY(-2px);
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #e63946;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 50%;
+}

@@ -1,0 +1,245 @@
+/* --- Base Variables (Light Theme) --- */
+:root {
+  --bg-color: #f4f7f9;
+  --card-bg-color: #ffffff;
+  --text-primary-color: #2c3e50;
+  --text-secondary-color: #576c7f;
+  --accent-color: #2ecc71; /* Green for success */
+  --accent-color-dark: #27ae60;
+  --border-color: #e0e6ed;
+  --primary-btn-bg: #ff6600; /* Your app's primary orange */
+  --primary-btn-hover-bg: #e65c00;
+  --secondary-btn-bg: #ecf0f1;
+  --secondary-btn-text: #2c3e50;
+  --secondary-btn-hover-bg: #dbe0e2;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Dark Theme Variables --- */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --card-bg-color: #2c2c2c;
+  --text-primary-color: #ecf0f1;
+  --text-secondary-color: #bdc3c7;
+  --border-color: #404040;
+  --secondary-btn-bg: #3a3a3a;
+  --secondary-btn-text: #ecf0f1;
+  --secondary-btn-hover-bg: #4a4a4a;
+}
+
+/* --- Main Wrapper --- */
+.order-success-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* --- Success Card --- */
+.order-success-card {
+  background-color: var(--card-bg-color);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  max-width: 550px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--border-color);
+  transform: translateY(-20px);
+  animation: floatUp 0.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Typography --- */
+.order-success-heading {
+  color: var(--text-primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.order-success-subheading {
+  color: var(--text-secondary-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* --- Animated Checkmark --- */
+.success-icon-container {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
+.success-checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: var(--accent-color);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.success-checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px var(--accent-color);
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.success-checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 40px var(--accent-color);
+  }
+}
+
+/* --- Order Details Box --- */
+.order-details-box {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.order-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.order-detail-item + .order-detail-item {
+  border-top: 1px solid var(--border-color);
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color);
+  font-weight: 500;
+}
+
+.detail-value {
+  font-size: 1rem;
+  color: var(--text-primary-color);
+  font-weight: 600;
+  word-break: break-all; /* For long payment IDs */
+}
+
+.payment-id {
+  font-family: 'monospace';
+}
+
+.total-price {
+  color: var(--accent-color-dark);
+}
+
+/* --- Action Buttons --- */
+.order-success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.action-button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-button.primary {
+  background-color: var(--primary-btn-bg);
+  color: white;
+}
+
+.action-button.primary:hover {
+  background-color: var(--primary-btn-hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.2);
+}
+
+.action-button.secondary {
+  background-color: var(--secondary-btn-bg);
+  color: var(--secondary-btn-text);
+}
+
+.action-button.secondary:hover {
+  background-color: var(--secondary-btn-hover-bg);
+}
+
+/* --- Error Message --- */
+.order-error {
+  background-color: #ffeded;
+  color: #c0392b;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+body.dark-mode .order-error {
+   background-color: #4a2e2e;
+   color: #f8baba;
+   border-color: #8b3e3e;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+  .order-success-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .order-success-heading {
+    font-size: 1.5rem;
+  }
+
+  .order-success-actions {
+    flex-direction: column;
+  }
+}

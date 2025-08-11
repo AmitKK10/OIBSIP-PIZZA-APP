@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime & process data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Logs and diagnostics
+logs/
+*.log
+*.gz
+report.*.json
+
+# Coverage & reporting
+coverage/
+.lcov
+.nyc_output/
+
+# Build outputs & distribution
+build/
+dist/
+
+# Environment variable files
+.env
+.env.*.local
+
+# Editor-specific files
+.vscode/
+.vscode-test/
+*.sublime-project
+*.sublime-workspace
+
+# Cache and temp directories
+.cache/
+parcel-cache/
+.cache/
+.eslintcache
+.stylelintcache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Optional: Yarn v2+
+.pnp.*
+.yarn/*
+!/.yarn/cache
+!/.yarn/patches
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarn/sdks
+!/.yarn/versions
+.yarn-integrity
+
+# Framework-specific (if applicable, e.g., for full-stack projects)
+.next/
+.nuxt/
+.vuepress/dist/
+.temp/
+.vitepress/dist/
+.docusaurus/
+.serverless/
+.dynamodb/

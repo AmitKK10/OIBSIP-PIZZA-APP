@@ -1,0 +1,311 @@
+/* CustomPizzaBuilder.css */
+
+.builder-container {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 36px;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+@media (max-width: 880px) {
+  .builder-container {
+    grid-template-columns: 1fr;
+    padding: 0 12px 40px 12px;
+  }
+}
+
+/* Card styles */
+.builder-card,
+.preview-card {
+  background: #1f1f22;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px -10px #ff66004a;
+  padding: 26px 28px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.builder-card:hover,
+.preview-card:hover {
+  box-shadow: 0 12px 42px -9px #ff660099;
+}
+
+/* Titles */
+.builder-title,
+.preview-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff7e00;
+  text-shadow: 0 0 7px #ff7e0022;
+  margin: 0;
+}
+
+.preview-card h3 {
+  margin-bottom: 14px;
+}
+
+/* Builder sections */
+.builder-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.builder-section label {
+  font-weight: 600;
+  font-size: 1.07rem;
+  margin-bottom: 6px;
+  color: #ffaa33;
+  user-select: text;
+}
+
+/* Select dropdown styles */
+.builder-section select {
+  background: #29292d;
+  border: none;
+  border-radius: 14px;
+  padding: 9px 14px;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: inset 0 0 8px #ff7e0011;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  outline-offset: 3px;
+  outline-color: transparent;
+}
+
+.builder-section select:hover,
+.builder-section select:focus {
+  background: #3a3428;
+  box-shadow: 0 0 12px #ff7e0044;
+  outline-color: #ff7e00cc;
+}
+
+/* Checkbox grid styling */
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 6px; /* space for scrollbar */
+}
+
+/* Stylish pill checkboxes */
+.checkbox-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #2e2a24;
+  padding: 6px 14px;
+  border-radius: 29px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #d9cca3;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 6px #0003;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+/* Hide default checkbox */
+.checkbox-pill input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2.6px solid #ff7a00cc;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+  outline-offset: 2px;
+  outline-color: transparent;
+}
+
+.checkbox-pill input[type='checkbox']:checked {
+  background: #ff7a005c;
+  border-color: #ff7a00;
+  box-shadow: 0 0 10px #ff7a005d;
+}
+
+/* Checkmark shape */
+.checkbox-pill input[type='checkbox']:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+ 	transform: rotate(45deg);
+}
+
+/* Hover/focus states on pills */
+.checkbox-pill:hover,
+.checkbox-pill:focus-within {
+  background: #3e3311;
+  color: #ffae40;
+}
+
+.checkbox-pill input[type='checkbox']:focus-visible {
+  outline: 3px solid #ff9c3f;
+  outline-offset: 2px;
+}
+
+/* Price display */
+.builder-price {
+  margin-top: 12px;
+  text-align: center;
+  color: #ff9b00;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 0 6px #ff9b0033;
+  user-select: none;
+}
+
+/* Price breakdown */
+.price-breakdown {
+  list-style: none;
+  color: #c7b573cc;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 24px;
+}
+
+.price-breakdown li {
+  margin-bottom: 5px;
+  user-select: text;
+}
+
+/* Buttons container */
+.builder-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons general style */
+.builder-buttons button {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 26px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 3px 14px -5px #ff7c005f;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.15s ease;
+  min-width: 120px;
+}
+
+/* Reset Button */
+.reset-btn {
+  background-color: #3a3a3a;
+  color: #d9caa6;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+  background-color: #555;
+  box-shadow: 0 4px 18px -7px #8c8c8cbb;
+  transform: scale(1.05);
+}
+
+.reset-btn:active {
+  background-color: #222;
+  transform: scale(0.95);
+}
+
+/* Add to Cart Button */
+.add-btn {
+  background: linear-gradient(90deg, #ff6600 10%, #ffa62b 90%);
+  color: #fff;
+  box-shadow: 0 4px 18px -4px #fb6d001a;
+}
+
+.add-btn:hover,
+.add-btn:focus {
+  background: linear-gradient(90deg, #ff7d00 15%, #ffb343 90%);
+  box-shadow: 0 8px 26px -8px #ff7a0000;
+  transform: scale(1.08);
+}
+
+.add-btn:active {
+  background-color: #d25f00;
+  box-shadow: none;
+  transform: scale(0.95);
+  color: #fff;
+}
+
+/* Save Favorite Button */
+.save-btn {
+  background: #641b00;
+  color: #ffaa55;
+  font-size: 1.2rem;
+  box-shadow: 0 3px 16px -7px #bb6000a1;
+  transition: background-color 0.27s ease, box-shadow 0.3s ease, transform 0.17s ease;
+}
+
+.save-btn:hover,
+.save-btn:focus {
+  background: #964600;
+  box-shadow: 0 9px 26px -7px #ff7f003f;
+  transform: scale(1.12);
+}
+
+.save-btn:active {
+  background-color: #4f1900;
+  box-shadow: none;
+  transform: scale(0.9);
+}
+
+/* Preview text styling */
+.preview-card p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 6px 0;
+  color: #f0d88d;
+  user-select: text;
+}
+
+/* Scrollbar styling for checkbox grids */
+.checkbox-grid::-webkit-scrollbar {
+  width: 7px;
+}
+
+.checkbox-grid::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 16px;
+}
+
+.checkbox-grid::-webkit-scrollbar-thumb {
+  background-color: #ff7a00cc;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Accessibility & placeholder colors if needed elsewhere */
+::placeholder {
+  color: #cfa555aa;
+}
+

@@ -1,0 +1,259 @@
+/* ========================
+   Container & Page Title
+========================= */
+.admin-orders-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #fffefee8, #000000c7);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.admin-orders-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: fadeInDown 0.6s ease-in-out;
+}
+
+/* ========================
+   Filters
+========================= */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.filters input {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 0.85rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  background:linear-gradient(135deg, #141313, #d70404d9);;
+  transition: all 0.3s ease;
+}
+
+.filters select {
+  min-width: 180px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+  background: linear-gradient(135deg, #141313, #d70404d9);;
+  transition: all 0.3s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* On large screens */
+@media (min-width: 900px) {
+  .filters input {
+    width: 450px;
+  }
+}
+
+/* On mobile */
+@media (max-width: 768px) {
+  .filters input,
+  .filters select {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ========================
+   Table Styles
+========================= */
+.orders-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr 2fr;
+  padding: 1rem;
+  align-items: center;
+}
+
+/* Table header */
+.table-header {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Table rows */
+.table-row {
+  transition: all 0.25s ease-in-out;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 0.3rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table-row:hover {
+  background: linear-gradient(135deg, #f8fbff, #eef6fc);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* Alternate row coloring */
+.orders-table .table-row:nth-child(even) {
+  background: #fafafa;
+}
+
+/* ========================
+   Stylish Status Dropdown
+========================= */
+.table-row select {
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.table-row select:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Color-coded statuses */
+.table-row select[value="Pending"] {
+  background-color: #fdebd0;
+  color: #d68910;
+}
+
+.table-row select[value="Confirmed"] {
+  background-color: #d4efdf;
+  color: #1e8449;
+}
+
+.table-row select[value="Delivered"] {
+  background-color: #d6eaf8;
+  color: #21618c;
+}
+
+.table-row select[value="Cancelled"] {
+  background-color: #f5b7b1;
+  color: #922b21;
+}
+
+/* Mobile-friendly dropdown */
+@media (max-width: 500px) {
+  .table-row select {
+    width: 100%;
+  }
+}
+
+/* ========================
+   Action Buttons
+========================= */
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.invoice-btn,
+.delete-btn {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.invoice-btn {
+  background: linear-gradient(135deg, #27ae60, #219150);
+  color: white;
+}
+
+.invoice-btn:hover {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ff6b5a, #e74c3c);
+  transform: scale(1.05);
+}
+
+/* ========================
+   Empty & Loading Text
+========================= */
+.empty-text,
+.loading-text {
+  text-align: center;
+  padding: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* ========================
+   Animations
+========================= */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================
+   Responsive Layout
+========================= */
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1.5fr 2fr 2fr 1fr 2fr;
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 500px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1.5fr;
+    grid-auto-rows: auto;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}

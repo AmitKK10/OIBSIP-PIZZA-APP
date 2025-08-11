@@ -1,0 +1,140 @@
+/* General Section Styling */
+.tos-section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: linear-gradient(145deg, #003acda1, #ff4500);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Header */
+.tos-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tos-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tos-header p {
+  color: #fdd9b5;
+}
+
+.tos-icon {
+  font-size: 2.5rem;
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+/* Search & Actions */
+.tos-search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tos-search input {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.tos-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tos-actions button {
+  flex: 1;
+  background: gold;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tos-actions button:hover {
+  background: #ffd700;
+}
+
+/* Section Items */
+.tos-section-item {
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.tos-section-item:hover {
+  transform: translateY(-3px);
+}
+
+.tos-section-title {
+  width: 100%;
+  background: transparent;
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tos-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.tos-toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Collapsible Content */
+.tos-section-content {
+  padding: 0 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.tos-section-content p {
+  padding: 1rem 0;
+  color: #fdd9b5;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  color: #fff8dc;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .tos-section {
+    padding: 1rem;
+  }
+
+  .tos-section-title {
+    font-size: 1rem;
+  }
+
+  .tos-actions {
+    flex-direction: column;
+  }
+}

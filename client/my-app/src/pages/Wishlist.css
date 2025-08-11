@@ -1,0 +1,218 @@
+/* Wishlist.css */
+
+/* Main container and title */
+.wishlist-container {
+  max-width: 1500px;
+  margin: 40px auto 0;
+  padding: 21px 18px 65px 18px;
+  background: #191b1f;
+  border-radius: 18px;
+  box-shadow: 0 3px 36px 0 rgba(0,0,0,0.19);
+  color: #fff;
+}
+.wishlist-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 26px;
+}
+
+/* Empty message styling */
+.empty-wishlist {
+  text-align: center;
+  font-size: 1.19rem;
+  opacity: 0.7;
+  margin: 45px 0;
+}
+
+/* Responsive grid layout */
+.wishlist-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+@media (max-width: 700px) {
+  .wishlist-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+}
+
+/* Wishlist card styles */
+.wishlist-card {
+  background: #222326;
+  border-radius: 17px;
+  box-shadow: 0 2px 14px 0 rgba(0,0,0,0.09);
+  padding: 20px 17px 20px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 310px;
+  position: relative;
+  transition: transform .15s cubic-bezier(.4,0,.2,1), box-shadow .15s;
+}
+.wishlist-card:hover,
+.wishlist-card:active {
+  transform: translateY(-4px) scale(1.027);
+  box-shadow: 0 8px 34px -13px #ff8300b5;
+}
+
+.wishlist-img {
+  width: 120px;
+  height: 120px;
+  max-width: 80vw;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #191b1f;
+  margin-bottom: 17px;
+  transition: transform 0.23s cubic-bezier(.41,.22,.24,.99), box-shadow 0.19s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.13);
+  cursor: pointer;
+}
+.wishlist-card:hover .wishlist-img,
+.wishlist-card:active .wishlist-img {
+  transform: scale(1.09) rotate(-2deg);
+  box-shadow: 0 7px 26px -6px #ff6f0070;
+}
+
+/* Name and price */
+.wishlist-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 7px 0;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+.wishlist-card p {
+  color: #ff8d21;
+  font-size: 1.03rem;
+  font-weight: 700;
+  margin-bottom: 17px;
+  margin-top: 0;
+}
+
+/* Wishlist actions (button & trash icon) */
+.wishlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.wishlist-actions button {
+  padding: 8px 20px;
+  background: linear-gradient(92deg, #ff9100 60%, #ff6600 100%);
+  color: #fff;
+  border: none;
+  border-radius: 23px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .17s, transform .13s, box-shadow .14s;
+  box-shadow: 0 2px 10px -6px #ff66005a;
+  outline: none;
+  min-width: 110px;
+}
+.wishlist-actions button:hover,
+.wishlist-actions button:focus {
+  background: linear-gradient(90deg,#ff7c18 53%,#fa7700 98%);
+  transform: scale(1.055);
+  box-shadow: 0 8px 22px -11px #ff6600cc;
+}
+.wishlist-actions button:active {
+  background: #232325;
+  color: #ff872a;
+  transform: scale(0.97);
+}
+
+/* Trash icon styles */
+.remove-icon {
+  color: #fb4e3f;
+  background: #181818;
+  border-radius: 50%;
+  padding: 9px 9px 7px 9px;
+  font-size: 1.33rem;
+  cursor: pointer;
+  transition: background .13s, color .14s, box-shadow .13s, transform .14s;
+  box-shadow: 0 1.5px 8px -4px #ff544047;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+}
+
+.remove-icon:hover,
+.remove-icon:focus {
+  background: #fb4e3f;
+  color: #fff;
+  box-shadow: 0 4px 15px -7px #ef4a3099;
+  transform: scale(1.13) rotate(-10deg);
+}
+.remove-icon:active {
+  background: #fff;
+  color: #fb4e3f;
+  box-shadow: 0 1.5px 9px -6px #fb4e3f77;
+  transform: scale(0.91);
+}
+
+/* Responsive tweaks for actions */
+@media (max-width: 600px) {
+  .wishlist-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+  .remove-icon {
+  font-size: 1.6rem;         /* Slightly bigger icon */
+  width: 42px;               /* Fixed width & height for clickable area */
+  height: 42px;
+  padding: 10px;             /* Uniform padding */
+  line-height: 22px;         /* vertically centers icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fb4e3f;
+  background: #181818;
+  box-shadow: 0 1.5px 8px -4px #ff544047;
+  transition: background .13s, color .14s, box-shadow .13s, transform .14s;
+  outline: none;
+  border: none;
+  user-select: none;
+}
+
+.remove-icon:hover,
+.remove-icon:focus {
+  background: #fb4e3f;
+  color: #fff;
+  box-shadow: 0 4px 15px -7px #ef4a3099;
+  transform: scale(1.2) rotate(-10deg); /* slightly bigger on hover */
+}
+
+  .wishlist-actions button {
+    width: 100%;
+  }
+}
+
+/* Responsive tweaks for card/padding */
+@media (max-width: 550px) {
+  .wishlist-container {
+    padding: 5vw 2vw 65px 2vw;
+    min-width: 0;
+  }
+  .wishlist-card {
+    min-height: 250px;
+    padding: 15px 8px;
+  }
+}
+
+/* Accessibility & placeholder colors */
+::-webkit-input-placeholder { color: #929292; }
+::-moz-placeholder { color: #929292; }
+:-ms-input-placeholder { color: #929292; }
+::placeholder { color: #929292; }

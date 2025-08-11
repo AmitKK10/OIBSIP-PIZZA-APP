@@ -1,0 +1,244 @@
+/* Navbar Styles */
+.navbar {
+  background: linear-gradient(135deg, #141313, #d70404d9);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-icon {
+  margin-right: 8px;
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.nav-icon-btn {
+  position: relative;
+  font-size: 1.4rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-icon-btn:hover {
+  color: #ffdede;
+  transform: scale(1.2);
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff1d1d;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Profile Menu Styles */
+
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-icon {
+  font-size: 2.2rem;
+  color: #3498db;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: #1d6fa5;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: absolute;
+  top: 2.8rem; /* just below icon */
+  right: 0;
+  background-color: #fff;
+  width: 280px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 18px 22px;
+  z-index: 1000;
+  user-select: text;
+  animation: dropdownFadeIn 0.25s ease forwards;
+}
+
+/* Fade-in animation */
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown Header */
+.dropdown-header {
+  margin-bottom: 14px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdown-header p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.dropdown-header p strong {
+  color: #555;
+}
+
+/* Divider line */
+.dropdown-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 14px 0;
+}
+
+/* Dropdown buttons */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #3498db;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  font-weight: 600;
+}
+
+.dropdown-item:hover {
+  background-color: #eaf4fc;
+  color: #1d6fa5;
+}
+
+.dropdown-item.logout {
+  color: #e74c3c;
+}
+
+.dropdown-item.logout:hover {
+  background-color: #fce9e8;
+  color: #b93a33;
+}
+
+/* Icons in dropdown */
+.dropdown-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .dropdown {
+    width: 90vw; /* nearly full width on small screens */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: 3.5rem;
+    padding: 16px 18px;
+  }
+
+  .dropdown-header p {
+    font-size: 0.9rem;
+  }
+
+  .dropdown-item {
+    font-size: 0.95rem;
+    padding: 8px 6px;
+    gap: 7px;
+  }
+
+  .profile-icon {
+    font-size: 1.8rem;
+  }
+}
+
+
+.logout {
+  color: #e52e71;
+  font-weight: bold;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar-right {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #ff8a00;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-right.show {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,315 @@
+/* MyOrders.css */
+
+/* Container and page title */
+.my-orders-container {
+  max-width: 100%;
+  margin: 36px auto 80px;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+  background-color: #121212;
+  user-select: none;
+}
+
+.my-orders-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ff6a00;
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 12px #ff6a001a,
+    0 0 25px #ff6a0033,
+    0 0 35px #ff6a0044;
+  user-select: none;
+  font-family: 'Segoe UI Black', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Loading and empty state text */
+.loading-text,
+.empty-text {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #888;
+  margin-top: 60px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  user-select: text;
+}
+
+/* Orders grid layout */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px 22px;
+  padding-bottom: 48px;
+  scroll-padding: 20px;
+}
+
+/* Individual order card */
+.order-card {
+  background: #1e1e1e;
+  border-radius: 20px;
+  box-shadow:
+    0 2px 12px rgba(255, 106, 0, 0.15),
+    0 6px 25px rgba(0, 0, 0, 0.8);
+  padding: 20px 26px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
+  cursor: default;
+  user-select: text;
+  position: relative;
+   box-sizing: border-box;
+}
+
+.order-card:hover,
+.order-card:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 8px 40px 0 rgba(255, 106, 0, 0.6),
+    0 18px 48px rgba(255, 106, 0, 0.4);
+  z-index: 10;
+}
+
+/* Order header with ID and status */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #ffb76b;
+  user-select: text;
+  text-shadow: 0 0 4px #ff6600aa;
+  flex-wrap: wrap; /* allows badge to wrap below if space is tight */
+}
+
+.order-phone {
+  margin: 6px 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+
+.order-header p {
+  flex-grow: 1;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Status badge */
+.status-badge {
+  padding: 6px 18px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  box-shadow: 0 0 10px #000a;
+  user-select: none;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* Status colors with glowing */
+.status-badge.pending {
+  background-color: #e67e22;
+  box-shadow: 0 0 22px #e67e22cc;
+}
+
+.status-badge.confirmed {
+  background-color: #2980b9;
+  box-shadow: 0 0 22px #2980b9cc;
+}
+
+.status-badge.preparing {
+  background-color: #8e44ad;
+  box-shadow: 0 0 22px #8e44adcc;
+}
+
+.status-badge.out-for-delivery {
+  background-color: #d35400;
+  box-shadow: 0 0 22px #d35400cc;
+}
+
+.status-badge.delivered {
+  background-color: #27ae60;
+  box-shadow: 0 0 22px #27ae60cc;
+}
+
+.status-badge.cancelled {
+  background-color: #c0392b;
+  box-shadow: 0 0 22px #c0392bcc;
+}
+
+/* Order details */
+.order-date,
+.order-total,
+.order-address,
+.order-payment {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+  user-select: text;
+  text-shadow: 0 0 2px #0004;
+}
+
+.order-address strong,
+.order-payment strong {
+  color: #ffb76b;
+}
+
+/* Order items list */
+.order-items {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0 18px 0;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.97rem;
+  line-height: 1.45;
+  color: #ddd;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  user-select: text;
+  scrollbar-width: thin;
+  scrollbar-color: #ff6600 #2b2b2b;
+}
+
+/* Scrollbar styles for WebKit */
+.order-items::-webkit-scrollbar {
+  width: 8px;
+}
+
+.order-items::-webkit-scrollbar-track {
+  background: #2b2b2b;
+  border-radius: 14px;
+}
+
+.order-items::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 14px;
+  box-shadow: inset 0 0 6px #ff990077;
+}
+
+/* Order items list items */
+.order-items li {
+  padding: 7px 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: default;
+  user-select: text;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.order-items li:hover {
+  background-color: #ff660011;
+  color: #ff8a00;
+}
+
+/* Download invoice button */
+.invoice-btn {
+  align-self: center;
+  padding: 14px 38px;
+  background: linear-gradient(90deg, #ff6600 0%, #ff9e1a 95%);
+  border: none;
+  border-radius: 36px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 28px -10px #ff7a0024;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.22s ease;
+  outline-offset: 3px;
+  outline-color: transparent;
+  min-width: 200px;
+  font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.invoice-btn:hover,
+.invoice-btn:focus {
+  background: linear-gradient(90deg, #ff7a0c 0%, #ffb144 95%);
+  box-shadow: 0 14px 44px -16px #ff9a0030;
+  transform: scale(1.12);
+  outline-color: #ff8c00cc;
+}
+
+.invoice-btn:active {
+  background-color: #d66100;
+  box-shadow: none;
+  transform: scale(0.95);
+  outline-color: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .my-orders-container {
+    padding: 0 18px;
+  }
+  .orders-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px 20px;
+  }
+  .invoice-btn {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .orders-grid {
+    grid-template-columns: 1fr;
+    gap: 20px 12px;
+  }
+  .order-card {
+    padding: 20px 18px 22px 18px;
+  }
+  .order-header p,
+  .status-badge {
+    font-size: 0.85rem;
+  }
+  .invoice-btn {
+    font-size: 1.05rem;
+    padding: 12px 22px;
+    border-radius: 28px;
+  }
+}
+
+/* Accessibility and focus states */
+.invoice-btn:focus-visible {
+  outline: 3px solid #ff7a00bb;
+  outline-offset: 4px;
+}
+
+.order-card:focus-within {
+  outline: 2px solid #ff7a0088;
+  outline-offset: 3px;
+}
+
+/* Utility - text selection */
+.order-header p,
+.order-date,
+.order-total,
+.order-address,
+.order-payment,
+.order-items li {
+  user-select: text;
+}
+

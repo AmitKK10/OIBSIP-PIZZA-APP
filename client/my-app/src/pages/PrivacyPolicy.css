@@ -1,0 +1,110 @@
+.privacy-section {
+  max-width: 700px;
+  margin: 45px auto 0 auto;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  border-radius: 17px;
+  background: #f7fff7;
+  box-shadow: 0 4px 28px #71f4d633;
+  animation: fadeInPriv 0.8s cubic-bezier(.3, .7, .4, 1.19);
+  padding: 32px 18px 30px 18px;
+}
+
+@keyframes fadeInPriv {
+  from { opacity: 0; transform: translateY(36px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.privacy-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.privacy-icon {
+  color: #00be7c;
+  font-size: 2.1rem;
+  margin-bottom: 12px;
+}
+.privacy-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #06b96b;
+}
+.privacy-header p {
+  color: #222b;
+  margin-top: 0px;
+}
+
+.privacy-body {
+  margin-top: 10px;
+}
+
+.privacy-section-item {
+  margin-bottom: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 190, 124, 0.15);
+  background: #fff;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.privacy-section-item.open {
+  box-shadow: 0 8px 28px rgba(0, 190, 124, 0.22);
+}
+
+.privacy-section-title {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 16px 22px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #00be7c;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.privacy-section-title:hover,
+.privacy-section-title:focus-visible {
+  background: #e3fff1;
+  outline-offset: 4px;
+  outline: 3px solid #00ca85;
+}
+
+.privacy-toggle-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.privacy-toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.privacy-section-content {
+  overflow: hidden;
+  padding: 0 22px 12px 22px;
+  color: #253245;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .privacy-section {
+    padding: 22px 3vw;
+  }
+  .privacy-header h1 {
+    font-size: 1.5rem;
+  }
+  .privacy-section-title {
+    font-size: 1rem;
+  }
+  .privacy-section-content {
+    font-size: 0.95rem;
+  }
+}

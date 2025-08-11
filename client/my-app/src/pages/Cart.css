@@ -1,0 +1,435 @@
+/* Cart.css */
+
+/* General resets & dark mode backgrounds */
+.cart-container {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 36px auto;
+  padding: 20px 18px 65px 18px;
+  background: #191b1f;
+  border-radius: 18px;
+  box-shadow: 0 2px 32px 0 rgba(0,0,0,0.24);
+  color: #fff;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+.empty-cart {
+  text-align: center;
+  font-size: 1.17rem;
+  opacity: 0.7;
+  margin: 30px 0 5vh 0;
+}
+
+/* Responsive cart grid */
+.cart-grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  margin-bottom: 37px;
+}
+@media (max-width: 600px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Cart card styles */
+.cart-card {
+  background: #23262b;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px 0 rgba(0,0,0,0.09);
+  display: flex;
+  gap: 18px;
+  padding: 16px;
+  min-height: 150px;
+  align-items: center;
+  transition: transform .12s cubic-bezier(.4,0,.2,1), box-shadow .14s;
+  position: relative;
+}
+.cart-card:hover,
+.cart-card:active {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 34px -12px #ff8300a8;
+}
+
+/* Pizza image with zoom on hover/tap */
+.cart-img {
+  width: 120px;
+  height: 120px;
+  min-width: 90px;
+  max-width: 34vw;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #191b1f;
+  overflow: hidden;
+  transition: transform 0.27s cubic-bezier(.44,.2,.27,1), box-shadow 0.18s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.17);
+  cursor: pointer;
+}
+.cart-card:hover .cart-img,
+.cart-card:active .cart-img {
+  transform: scale(1.09) rotate(-2deg);
+  box-shadow: 0 8px 32px -7px #ff6f0080;
+}
+
+/* Details */
+.cart-details {
+  flex: 1;
+  min-width: 0;
+}
+.cart-details h4 {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.cart-details p {
+  margin: 0 0 5px 0;
+  line-height: 1.27;
+}
+.cart-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff6f00;
+  margin: 6px 0 12px 0;
+}
+
+/* Actions and Buttons */
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+  flex-wrap: wrap; /* allow buttons to go to next line if needed */
+}
+
+@media (max-width: 600px) {
+  .cart-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .remove-btn {
+    margin-left: 0; /* remove side margin, so it lines up neatly */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .quantity-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #232323;
+  border-radius: 20px;
+  padding: 3px 5px;
+}
+.quantity-btn {
+  background: #ffb866;
+  color: #232323;
+  font-size: 1.1rem;
+  border: none;
+  padding: 7px 14px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-weight: 900;
+  transition: background .16s, color .15s, transform .11s;
+  box-shadow: 0 1px 7px -2px #f1850e40;
+  outline: none;
+}
+.quantity-btn:hover,
+.quantity-btn:focus {
+  background: #ff7c24;
+  color: #fff;
+  transform: scale(1.14);
+}
+.quantity-btn:active {
+  background: #232323;
+  color: #ffb866;
+  transform: scale(0.97);
+}
+.quantity-value {
+  display: inline-block;
+  min-width: 25px;
+  text-align: center;
+}
+
+/* Remove Button */
+.remove-btn {
+  background: transparent;
+  color: #fb4e3f;
+  border: 1px solid #fb4e3f;
+  padding: 7px 16px;
+  margin-left: 10px;
+  border-radius: 22px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background .14s, color .14s, border-color .12s, box-shadow .12s;
+  font-size: 1.01rem;
+  box-shadow: 0 1px 8px -4px #ff544044;
+}
+.remove-btn:hover,
+.remove-btn:focus {
+  background: #fb4e3f;
+  color: #fff;
+  border-color: #fb4e3f;
+  box-shadow: 0 2px 14px -7px #ff544080;
+}
+.remove-btn:active {
+  background: #fff;
+  color: #fb4e3f;
+  border-color: #fb4e3f;
+}
+
+/* Address form styles */
+.address-form {
+  margin: 29px 0 0 0;
+  background: #222327;
+  border-radius: 13px;
+  padding: 21px 18px 16px 18px;
+  box-shadow: 0 1px 12px -7px #122;
+  max-width: 410px;
+}
+.address-form h3 {
+  font-size: 1.16rem;
+  letter-spacing: .5px;
+  color: #ff872a;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.address-form input {
+  width: 100%;
+  background: #191b1f;
+  border: 1px solid #353b42;
+  border-radius: 8px;
+  padding: 9px 13px;
+  margin-bottom: 11px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border .19s, box-shadow .16s, background .1s;
+  box-shadow: 0 2px 10px -10px #ff910040;
+}
+.address-form input:focus {
+  border: 1.6px solid #ff832a;
+  background: #222226;
+}
+.address-form input:disabled {
+  opacity: 0.7;
+}
+
+@media (max-width: 810px) {
+  .cart-container {
+    padding: 7vw 3vw 65px 3vw;
+    min-width: 0;
+  }
+  .address-form {
+    max-width: 98%;
+  }
+}
+
+/* Cart summary and place order button */
+.cart-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 34px auto 0 auto;
+  background: #1a1a1c;
+  border-radius: 11px;
+  max-width: 510px;
+  padding: 19px 22px;
+  box-shadow: 0 1px 10px -6px #232;
+  flex-wrap: wrap;
+  gap: 19px;
+}
+
+.cart-summary h3 {
+  color: #ff872a;
+  font-size: 1.33rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.place-order-btn {
+  padding: 13px 34px;
+  background: linear-gradient(91deg,#ff9100,#ff6600 87%);
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: background .19s, box-shadow .17s, transform .11s;
+  outline: none;
+  box-shadow: 0 2px 11px -3px #ff66004a;
+}
+.place-order-btn:hover,
+.place-order-btn:focus {
+  background: linear-gradient(89deg,#ff6d00,#fa7700 87%);
+  box-shadow: 0 5px 25px -7px #ff6600cb;
+  transform: scale(1.042);
+}
+.place-order-btn:active {
+  background: #232325;
+  color: #ff7d0f;
+  transform: scale(0.97);
+}
+
+::-webkit-input-placeholder { color: #8c959e; }
+::-moz-placeholder { color: #8c959e; }
+:-ms-input-placeholder { color: #8c959e; }
+::placeholder { color: #8c959e; }
+
+/* ================= Coupon Code Section ================= */
+
+.coupon-section {
+  background: #222327;
+  border-radius: 13px;
+  padding: 18px 16px;
+  box-shadow: 0 1px 12px -7px #122;
+  max-width: 410px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coupon-section h3 {
+  font-size: 1.16rem;
+  letter-spacing: 0.5px;
+  color: #ffb347;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.coupon-input-wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.coupon-input {
+  flex: 1;
+  background: #191b1f;
+  border: 1px solid #353b42;
+  border-radius: 8px;
+  padding: 10px 13px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.19s, box-shadow 0.16s, background 0.1s;
+  box-shadow: 0 2px 10px -10px #ff910040;
+}
+
+.coupon-input:focus {
+  border: 1.6px solid #ff832a;
+  background: #222226;
+}
+
+.apply-coupon-btn {
+  background: linear-gradient(91deg, #ff9100, #ff6600 87%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: background 0.19s, box-shadow 0.17s, transform 0.11s;
+  outline: none;
+  box-shadow: 0 2px 11px -3px #ff66004a;
+}
+
+.apply-coupon-btn:hover,
+.apply-coupon-btn:focus {
+  background: linear-gradient(89deg, #ff6d00, #fa7700 87%);
+  box-shadow: 0 5px 25px -7px #ff6600cb;
+  transform: scale(1.04);
+}
+
+.apply-coupon-btn:active {
+  background: #232325;
+  color: #ff7d0f;
+  transform: scale(0.97);
+}
+
+.coupon-message {
+  font-size: 0.9rem;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+.coupon-message.success {
+  color: #4caf50;
+}
+
+.coupon-message.error {
+  color: #fb4e3f;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .coupon-section {
+    max-width: 100%;
+    padding: 16px;
+  }
+  
+  .coupon-input-wrapper {
+    flex-direction: column;
+  }
+
+  .apply-coupon-btn {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+.address-coupon-container {
+  display: flex;
+  gap: 30px;
+  max-width: 900px;
+  margin: 2rem auto 1.5rem auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.left-column,
+.right-column {
+  flex: 1 1 400px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Make sure Place Order button stays width 100% on the right column */
+.right-column .place-order-btn {
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 820px) {
+  .address-coupon-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .left-column,
+  .right-column {
+    min-width: 100%;
+  }
+}

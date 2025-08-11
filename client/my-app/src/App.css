@@ -1,0 +1,47 @@
+/* Base Reset and Font */
+body, html, #root {
+ 
+  overflow-y: scroll;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background-color: #fdfdfd;
+}
+
+/* Container to wrap all pages */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+/* Add space when Navbar is shown */
+.with-navbar {
+  padding-top: 80px; /* Match Navbar height */
+}
+
+/* Fixed Navbar */
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Generic page content container */
+.page-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 0 1rem;
+  }
+}

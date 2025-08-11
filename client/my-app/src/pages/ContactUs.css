@@ -1,0 +1,215 @@
+.contact-section {
+  max-width: 880px;
+  margin: 38px auto 0 auto;
+  background: linear-gradient(107deg, #fff6ee 70%, #ffe0ba 100%);
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(244,67,54,0.08);
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  padding: 0 18px 36px 18px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 38px;
+  padding: 38px 0 0 0;
+}
+
+.contact-info h1 {
+  color: #f44336;
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-bottom: 16px;
+}
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+.contact-info li {
+  margin-bottom: 12px;
+  color: #24292f;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-info a {
+  color: #f44336;
+  text-decoration: underline dotted;
+}
+.contact-note {
+  font-size: 1.09rem;
+  color: #a85802;
+  margin-top: 16px;
+}
+
+/* Form Styles */
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 22px #ffca6680;
+  padding: 30px 24px 26px 24px;
+  animation: fadeInUp 0.7s cubic-bezier(.2,.9,.6,1.13);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.contact-form h2 {
+  color: #fa8312;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* Input groups for floating labels */
+.input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  border: 1.2px solid #fff4e5;
+  border-radius: 7px;
+  padding: 14px 14px 14px 14px;
+  font-size: 1.06rem;
+  outline: none;
+  font-family: inherit;
+  background: #fffaf5;
+  box-shadow: 0 0 3px #fcb36a33;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #ff9527;
+  box-shadow: 0 0 10px #ff9527a0;
+}
+
+/* Floating labels */
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  color: #bfa371;
+  font-weight: 500;
+  font-size: 1rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
+  background: #fffaf5;
+  padding: 0 6px;
+  border-radius: 3px;
+}
+
+/* When input has value or is focused, float label up */
+.input-group.filled label,
+.input-group input:focus + label,
+.input-group textarea:focus + label {
+  top: 6px;
+  font-size: 0.85rem;
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Input error styling */
+.input-group.error input,
+.input-group.error textarea {
+  border-color: #d9534f;
+  box-shadow: 0 0 6px #d9534f99;
+}
+
+.input-error {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Submit button */
+.contact-form button {
+  background: linear-gradient(92deg, #ff9527 40%, #f44336 100%);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 9px #fcb36a66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.12s;
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-form button:hover:not(:disabled) {
+  background: linear-gradient(92deg, #f44336 10%, #ff9527 80%);
+  transform: scale(1.05);
+}
+
+/* Submit feedback messages */
+.submit-feedback {
+  margin-top: 14px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeInFeedback 0.4s ease forwards;
+  user-select: none;
+}
+
+.submit-feedback.success {
+  color: #2ecc40;
+}
+
+.submit-feedback.error {
+  color: #d9534f;
+}
+
+@keyframes fadeInFeedback {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 24px;
+  }
+  .contact-section {
+    padding-bottom: 22px;
+  }
+}

@@ -1,0 +1,45 @@
+/* CustomPizzaButton.css - Stylish nav button for Custom Pizza */
+
+.custom-pizza-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ff6f00; /* Deep orange */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.custom-pizza-btn .icon {
+  font-size: 18px;
+}
+
+.custom-pizza-btn:hover {
+  background-color: #e85d04;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.custom-pizza-btn:active {
+  background-color: #d9480f;
+  transform: scale(0.97);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .custom-pizza-btn {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .custom-pizza-btn .icon {
+    font-size: 16px;
+  }
+}
