@@ -8,11 +8,19 @@ const cors = require('cors');
 const app = express();
 
 // ✅ Middleware
+const allowedOrigins = process.env.FRONTEND_URL?.split(',') || [];
+
 app.use(cors({
-  origin: [
-    'http://localhost:3000', // local dev
-    'https://oibsip-pizza-app-ykex.onrender.com' // hosted frontend
-  ],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
