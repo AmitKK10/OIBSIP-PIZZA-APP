@@ -66,13 +66,13 @@ const ForgotPassword = () => {
       toast.warning("Please enter your email or mobile number");
       return;
     }
+setLoading(true);
+try {
+  const res = await axios.post(
+    `${process.env.REACT_APP_API_URL}/api/auth/forgot-password`,
+    { identifier }
+  );
 
-    setLoading(true);
-    try {
-      const res = await axios.post(
-        "http://localhost:55000/api/auth/forgot-password",
-        { identifier }
-      );
 
       toast.success("OTP sent to your registered contact");
       navigate("/verify-otp", {

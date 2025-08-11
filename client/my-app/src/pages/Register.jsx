@@ -155,7 +155,9 @@ const Register = () => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:55000/api/auth/verify-otp", {
+      await axios.post(
+  `${process.env.REACT_APP_API_URL}/api/auth/verify-otp`,
+  {
         email,
         otp,
       });

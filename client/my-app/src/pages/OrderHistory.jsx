@@ -14,7 +14,7 @@ function OrderHistory() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:55000/api/orders/my", {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/orders/my`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders || []);

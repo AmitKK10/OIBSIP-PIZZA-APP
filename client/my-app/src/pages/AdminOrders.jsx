@@ -20,7 +20,7 @@ function AdminOrders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:55000/api/orders/all", {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/orders/all`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setOrders(response.data.orders || []);
@@ -40,7 +40,7 @@ function AdminOrders() {
     setUpdatingStatusId(id);
     try {
       await axios.put(
-        `http://localhost:55000/api/orders/${id}/status`,
+  `${process.env.REACT_APP_API_URL}/api/orders/${id}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -62,7 +62,7 @@ function AdminOrders() {
   const handleDeleteOrder = async (orderId) => {
     if (!window.confirm("Are you sure you want to delete this order?")) return;
     try {
-      await axios.delete(`http://localhost:55000/api/orders/${orderId}`, {
+     await axios.delete(`${process.env.REACT_APP_API_URL}/api/orders/${orderId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Order deleted successfully.");

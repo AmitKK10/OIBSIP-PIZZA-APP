@@ -33,8 +33,8 @@ const ChangePassword = () => {
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:55000/api/auth/change-password",
+  const res = await axios.post(
+  `${process.env.REACT_APP_API_URL}/api/auth/change-password`,
         { oldPassword, newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );

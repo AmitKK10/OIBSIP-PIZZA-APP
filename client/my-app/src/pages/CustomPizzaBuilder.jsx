@@ -32,17 +32,18 @@ useEffect(() => {
   loadFavorites();
 }, []);
 
-  useEffect(() => {
-    const fetchInventory = async () => {
-      try {
-        const res = await axios.get('http://localhost:55000/api/inventory');
-        setInventory(res.data);
-      } catch (err) {
-        console.error('Error fetching inventory', err);
-      }
-    };
-    fetchInventory();
-  }, []);
+ useEffect(() => {
+  const fetchInventory = async () => {
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/inventory`);
+      setInventory(res.data);
+    } catch (err) {
+      console.error('Error fetching inventory', err);
+    }
+  };
+  fetchInventory();
+}, []);
+
 
   const filterItems = (type) => inventory.filter((item) => item.type === type);
 

@@ -34,7 +34,8 @@ const AdminInventory = () => {
 
   const fetchInventory = async () => {
     try {
-      const res = await axios.get('http://localhost:55000/api/inventory');
+     const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/inventory`);
+
       setInventory(res.data);
     } catch (err) {
       toast.error("Failed to load inventory");
@@ -47,7 +48,8 @@ const AdminInventory = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:55000/api/inventory', newItem);
+    await axios.post(`${process.env.REACT_APP_API_URL}/api/inventory`, newItem);
+
       toast.success("Item added successfully");
       setNewItem({ name: '', quantity: '', unit: '', type: '' });
       fetchInventory();
@@ -58,7 +60,8 @@ const AdminInventory = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:55000/api/inventory/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/inventory/${id}`);
+
       toast.success("Item deleted");
       fetchInventory();
     } catch {
@@ -82,7 +85,8 @@ const AdminInventory = () => {
       return;
     }
     try {
-      await axios.put(`http://localhost:55000/api/inventory/${id}`, editForm);
+     await axios.put(`${process.env.REACT_APP_API_URL}/api/inventory/${id}`, editForm);
+
       toast.success("Item updated");
       setEditItemId(null);
       fetchInventory();

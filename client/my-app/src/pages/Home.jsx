@@ -18,17 +18,18 @@ function Home() {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:55000/api/pizza/predefined")
-      .then((res) => {
-        const pizzasWithExtras = res.data.map((pizza, index) => ({
-          ...pizza,
-          _id: `pizza-${index}`,
-        }));
-        setPizzas(pizzasWithExtras);
-      })
-      .catch((err) => console.error("Failed to fetch pizzas:", err));
-  }, []);
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/api/pizza/predefined`)
+    .then((res) => {
+      const pizzasWithExtras = res.data.map((pizza, index) => ({
+        ...pizza,
+        _id: `pizza-${index}`,
+      }));
+      setPizzas(pizzasWithExtras);
+    })
+    .catch((err) => console.error("Failed to fetch pizzas:", err));
+}, []);
+
 
   const handleSizeChange = (pizzaId, size) => {
     setSelectedSizes((prev) => ({ ...prev, [pizzaId]: size }));

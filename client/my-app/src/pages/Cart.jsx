@@ -80,7 +80,7 @@ const Cart = () => {
   const verifyPayment = async (paymentData) => {
     try {
       const response = await axios.post(
-        "http://localhost:55000/api/payment/verify",
+  `${process.env.REACT_APP_API_URL}/api/payment/verify`,
         paymentData
       );
       return response.data;
@@ -114,9 +114,8 @@ const Cart = () => {
         phone: address.phone,
         coupon: discount > 0 ? coupon.trim().toUpperCase() : undefined,
       };
-
-      const response = await axios.post(
-        "http://localhost:55000/api/orders",
+const response = await axios.post(
+  `${process.env.REACT_APP_API_URL}/api/orders`,
         orderData,
         {
           headers: {
@@ -167,7 +166,7 @@ const Cart = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:55000/api/payment/create-order",
+  `${process.env.REACT_APP_API_URL}/api/payment/create-order`,
         { amount: discountedPrice }
       );
 

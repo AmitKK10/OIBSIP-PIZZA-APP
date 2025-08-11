@@ -24,7 +24,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const { data } = await axios.get("http://localhost:55000/api/orders/stats", {
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/orders/stats`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (data.success) {
