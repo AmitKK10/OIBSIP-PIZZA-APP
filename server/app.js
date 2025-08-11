@@ -9,10 +9,12 @@ const app = express();
 
 // ✅ Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // frontend URL
+  origin: [
+    'http://localhost:3000', // local dev
+    'https://oibsip-pizza-app-ykex.onrender.com' // hosted frontend
+  ],
   credentials: true
 }));
-app.use(express.json());
 
 // ✅ Database Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pizza-app', {
