@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation,useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./OrderSuccess.css"; // Make sure to import the new CSS
 
 export default function OrderSuccess() {
   const location = useLocation();
+  const navigate = useNavigate ();
   const [orderDetails, setOrderDetails] = useState({});
 
   useEffect(() => {
@@ -67,10 +68,10 @@ export default function OrderSuccess() {
         )}
 
         <div className="order-success-actions">
-           <button className="action-button primary" onClick={() => window.location.href = '/home'}>
+           <button className="action-button primary" onClick={() => navigate("/home")}>
             Continue Shopping
           </button>
-          <button className="action-button secondary" onClick={() => window.location.href = '/my-orders'}>
+          <button className="action-button secondary" onClick={() => navigate("/my-orders")}>
             View Order History
           </button>
         </div>
