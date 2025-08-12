@@ -1,9 +1,27 @@
-# This is my Pizza App
+# 🍕 My Pizza Delivery App – MERN Stack  
 
-🍕 Click on the Pizza below to See Pizza App Demo
+## 🍿 Watch Demo Video  
+Click the Pizza below to watch the full demo on YouTube:  
 
-<a href="https://youtu.be/S2Z0-Ru8nlo">
-  <img src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg" alt="🍕 Click on Pizza to See Pizza App Demo" width="600">
-</a>
+[![🍕 Click on Pizza to See Pizza App Demo](https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg)](https://youtu.be/S2Z0-Ru8nlo)
 
-🍕 Click on the Pizza above to See Pizza App Demo
+---
+
+## 🚀 Try It Live!  
+Want to experience the Pizza App yourself? Click below to order your favorite pizza right now:  
+
+👉 **[Live Website – Try Now 🍕](https://oibsip-pizza-app-ykex.onrender.com)**
+
+---
+
+### 📌 Features  
+- User-friendly interface  
+- Real-time cart updates  
+- Secure order process with Razorpay  
+- Responsive design for all devices  
+- Powerful admin dashboard for inventory & order management  
+
+---
+
+💻 **Tech Stack:**  
+MongoDB | Express.js | React.js | Node.js
