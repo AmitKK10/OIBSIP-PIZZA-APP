@@ -5,9 +5,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
 const app = express();
+console.log('MONGODB_URI:', process.env.MONGODB_URI);
 
 // ✅ Middleware
+app.use(express.json());
 const allowedOrigins = process.env.FRONTEND_URL?.split(',') || [];
 
 app.use(cors({
