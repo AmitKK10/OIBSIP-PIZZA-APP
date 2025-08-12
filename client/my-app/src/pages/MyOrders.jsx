@@ -15,7 +15,7 @@ function MyOrders() {
     const fetchOrders = async () => {
       try {
        const response = await axios.get(
-  `${process.env.REACT_APP_API_URL}/api/my-orders`,
+  `${process.env.REACT_APP_API_URL}/api/orders/my-orders`,
   {
           headers: {
             Authorization: `Bearer ${token}`,
